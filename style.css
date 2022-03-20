@@ -1,6 +1,9 @@
 @import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap");
+
 body {
 	overflow: hidden;
+	font-family: "Roboto Slab", serif;
 }
 main {
 	display: flex;
@@ -31,6 +34,7 @@ main::after {
 #clock {
 	font-size: 200px;
 	color: ivory;
+	font-weight: bold;
 }
 img {
 	width: 100%;
@@ -45,6 +49,7 @@ img {
 	border-top: hidden;
 	border-right: hidden;
 	border-left: hidden;
+	border-color: pink;
 	background-color: rgba(255, 255, 255, 0);
 	width: 500px;
 	height: 100px;
@@ -52,11 +57,22 @@ img {
 	color: ivory;
 }
 
+#login-form input:last-child {
+	background-color: plum;
+	border: none;
+	cursor: pointer;
+	box-shadow: 1px 1px 3px 1px plum;
+	color: skyblue;
+	font-weight: 900;
+	border-radius: 10px;
+}
+
 #login-form input[type="text"]:focus {
 	outline: none;
 }
 #login-form input::placeholder {
 	font-size: xx-large;
+	color: rgba(255, 255, 255, 0.7);
 }
 #greeting {
 	font-size: 50px;
@@ -79,7 +95,7 @@ img {
 }
 #todo-form input::placeholder {
 	font-size: xx-large;
-	color: rgba(255, 255, 255, 0.4);
+	color: rgba(255, 255, 255, 0.7);
 }
 #todo-list li {
 	color: ivory;
