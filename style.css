@@ -58,11 +58,11 @@ img {
 }
 
 #login-form input:last-child {
-	background-color: plum;
+	background-color: lemonchiffon;
 	border: none;
 	cursor: pointer;
 	box-shadow: 1px 1px 3px 1px plum;
-	color: skyblue;
+	color: seagreen;
 	font-weight: 900;
 	border-radius: 10px;
 }
