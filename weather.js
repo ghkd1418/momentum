@@ -17,3 +17,6 @@ function onGoError() {
 	alert("Can't find you. No weather for you");
 }
 navigator.geolocation.getCurrentPosition(onGoOk, onGoError);
+
+//추가
+// 날씨에 따라 날씨에 따라 아이콘 삽입
