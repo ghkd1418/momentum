@@ -29,14 +29,17 @@ main::after {
 	color: palevioletred;
 	font-size: 2vmax;
 	font-weight: bold;
+	align-items: center;
 }
-
+#weather img {
+	height: 2vmax;
+}
 #clock {
 	font-size: 200px;
 	color: ivory;
 	font-weight: bold;
 }
-img {
+#backgroundImage {
 	width: 100%;
 	height: 100%;
 	position: absolute;

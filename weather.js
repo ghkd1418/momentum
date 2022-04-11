@@ -8,9 +8,45 @@ function onGoOk(position) {
 		.then((Response) => Response.json())
 		.then((data) => {
 			const weather = document.querySelector("#weather span:first-child");
-			const city = document.querySelector("#weather span:last-child");
-			weather.innerHTML = `${data.weather[0].main} / ${data.main.temp}℃`;
-			city.innerText = data.name;
+			const cityAndTemp = document.querySelector(
+				"#weather span:last-child"
+			);
+
+			let weatherData = data.weather[0].main;
+			let tempData = Math.round(data.main.temp);
+
+			if (data.name == "Reisui") {
+				data.name = "Yeosu";
+			}
+			cityAndTemp.innerHTML = `${tempData}℃ ${data.name}`;
+
+			// create cloud icon
+			function cloudIcon() {
+				const weatherImg = document.createElement("img");
+				weatherImg.src = `img/cloud.png`;
+				weather.appendChild(weatherImg);
+			}
+
+			switch (weatherData) {
+				case "Clouds":
+					cloudIcon();
+					break;
+
+				case "rain":
+					weather.innerHTML = `비`;
+					break;
+
+				case "snow":
+					weather.innerHTML = `눈`;
+					break;
+
+				case "wind":
+					weather.innerHTML = `바람`;
+					break;
+
+				default:
+					break;
+			}
 		});
 }
 function onGoError() {
@@ -19,4 +55,4 @@ function onGoError() {
 navigator.geolocation.getCurrentPosition(onGoOk, onGoError);
 
 //추가
-// 날씨에 따라 날씨에 따라 아이콘 삽입
+// 날씨에 따라 날씨에 따라 아이콘 삽입 (진행중..)
