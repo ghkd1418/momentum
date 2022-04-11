@@ -20,39 +20,41 @@ function onGoOk(position) {
 			}
 			cityAndTemp.innerHTML = `${tempData}℃ ${data.name}`;
 
-			// create cloud icon
-			function cloudIcon() {
-				const weatherImg = document.createElement("img");
-				weatherImg.src = `img/cloud.png`;
-				weather.appendChild(weatherImg);
-			}
+			const weatherImg = document.createElement("img");
 
 			switch (weatherData) {
 				case "Clouds":
-					cloudIcon();
+					weatherImg.src = `img/cloud.png`;
 					break;
 
-				case "rain":
-					weather.innerHTML = `비`;
+				case "Rain":
+					weatherImg.src = `img/rain.png`;
 					break;
 
-				case "snow":
-					weather.innerHTML = `눈`;
+				case "Snow":
+					weatherImg.src = `img/snow.png`;
 					break;
 
-				case "wind":
-					weather.innerHTML = `바람`;
+				case "Wind":
+					weatherImg.src = `img/wind.png`;
+					break;
+
+				case "Sun":
+					weatherImg.src = `img/sun.png`;
+					break;
+
+				case "Thunder":
+					weatherImg.src = `img/thunder.png`;
 					break;
 
 				default:
+					alert("추가 되지 않은 날씨");
 					break;
 			}
+			weather.appendChild(weatherImg);
 		});
 }
 function onGoError() {
 	alert("Can't find you. No weather for you");
 }
 navigator.geolocation.getCurrentPosition(onGoOk, onGoError);
-
-//추가
-// 날씨에 따라 날씨에 따라 아이콘 삽입 (진행중..)
