@@ -24,8 +24,16 @@ function paintToDo(newToDo) {
 	const span = document.createElement("span");
 	span.innerText = newToDo.text;
 	const button = document.createElement("button");
+	// 삭제 버튼 이미지 생성
+	// const deleteButton = document.createElement("img");
+	// deleteButton.id = "deleteButton";
+	// deleteButton.src = `img/delete.png`;
+	// li.button.appendChild(deleteButton);
 	button.innerText = "❌";
 	button.addEventListener("click", deleteToDo);
+	span.addEventListener("click", (event) => {
+		event.target.classList.toggle("complete"); // 취소선
+	});
 	li.appendChild(span);
 	li.appendChild(button);
 	todoList.appendChild(li);
@@ -39,9 +47,12 @@ function handleToDoSubmit(event) {
 		text: newToDo,
 		id: Date.now(),
 	};
-	toDos.push(newToDoObj);
-	paintToDo(newToDoObj);
-	saveToDo();
+	// todolist 개수 제한
+	if (toDos.length < 9) {
+		toDos.push(newToDoObj);
+		paintToDo(newToDoObj);
+		saveToDo();
+	}
 }
 
 todoForm.addEventListener("submit", handleToDoSubmit);
@@ -56,6 +67,3 @@ if (saveToDos) {
 // 배열에서 뭔가를 지우려면 아이템이 지워지는게 아닌 제외되고 새로운 배열이 만들어지는것
 
 //추가할 사항 --- 4.7
-// todolist 3개 이상일 시 더보기로 변경하여 클릭시 오픈
-// 완료버튼 추가하여 클릭시 취소선
-//	완료된것 모두 삭제 버튼

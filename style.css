@@ -23,6 +23,12 @@ main::after {
 	display: none;
 }
 
+.complete {
+	text-decoration: line-through;
+	color: rgba(255, 255, 255, 0.5);
+	font-style: italic;
+}
+
 #weather {
 	display: flex;
 	justify-content: right;
@@ -95,6 +101,12 @@ main::after {
 	font-size: xx-large;
 	color: rgba(255, 255, 255, 0.7);
 }
+#todo-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 #todo-list li {
 	color: ivory;
 	font-size: 35px;
@@ -109,6 +121,11 @@ main::after {
 #todo-list button:hover {
 	cursor: pointer;
 }
+#todo-list span:hover {
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
 #quotes {
 	color: ivory;
 	font-size: 2.5vw;

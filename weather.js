@@ -11,7 +11,6 @@ function onGoOk(position) {
 			const cityAndTemp = document.querySelector(
 				"#weather span:last-child"
 			);
-
 			let weatherData = data.weather[0].main;
 			let tempData = Math.round(data.main.temp);
 
@@ -28,27 +27,27 @@ function onGoOk(position) {
 					break;
 
 				case "Rain":
-					weatherImg.src = `img/rain.png`;
+					weatherImg.src = `img/rain.gif`;
 					break;
 
 				case "Snow":
-					weatherImg.src = `img/snow.png`;
+					weatherImg.src = `img/snow.gif`;
 					break;
 
 				case "Wind":
-					weatherImg.src = `img/wind.png`;
+					weatherImg.src = `img/wind.gif`;
 					break;
 
-				case "Sun":
-					weatherImg.src = `img/sun.png`;
+				case "Clear":
+					weatherImg.src = `img/sun.gif`;
 					break;
 
 				case "Thunder":
-					weatherImg.src = `img/thunder.png`;
+					weatherImg.src = `img/thunder.gif`;
 					break;
 
 				default:
-					alert("추가 되지 않은 날씨");
+					alert(weatherData);
 					break;
 			}
 			weather.appendChild(weatherImg);
