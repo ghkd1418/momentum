@@ -12,10 +12,17 @@ function saveToDo() {
 }
 
 function deleteToDo(clickEvent) {
-	const li = clickEvent.target.parentElement;
+	const li = clickEvent.target.parentElement.parentElement;
 	li.remove(); //list item 삭제
 	toDos = toDos.filter((toDo) => toDo.id != li.id);
 	saveToDo();
+}
+// 삭제 버튼 이미지 생성
+function paintDelteteBtn(btn) {
+	const deleteButton = document.createElement("img");
+	deleteButton.id = "deleteButton";
+	deleteButton.src = `img/delete.png`;
+	btn.appendChild(deleteButton);
 }
 
 function paintToDo(newToDo) {
@@ -24,12 +31,8 @@ function paintToDo(newToDo) {
 	const span = document.createElement("span");
 	span.innerText = newToDo.text;
 	const button = document.createElement("button");
-	// 삭제 버튼 이미지 생성
-	// const deleteButton = document.createElement("img");
-	// deleteButton.id = "deleteButton";
-	// deleteButton.src = `img/delete.png`;
-	// li.button.appendChild(deleteButton);
-	button.innerText = "❌";
+	button.type = "button";
+	paintDelteteBtn(button);
 	button.addEventListener("click", deleteToDo);
 	span.addEventListener("click", (event) => {
 		event.target.classList.toggle("complete"); // 취소선
@@ -65,5 +68,3 @@ if (saveToDos) {
 	parsedToDos.forEach(paintToDo); // [{"text":"a","id":1646900814256}] 이러한 형식으로 만들어줌
 }
 // 배열에서 뭔가를 지우려면 아이템이 지워지는게 아닌 제외되고 새로운 배열이 만들어지는것
-
-//추가할 사항 --- 4.7

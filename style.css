@@ -5,14 +5,16 @@ body {
 	overflow: hidden;
 	font-family: "Roboto Slab", serif;
 }
+
 main {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	flex-direction: column;
 	height: 100vh;
-	gap: 50px;
+	gap: 5%;
 }
+
 main::after {
 	content: "";
 	display: block;
@@ -32,19 +34,20 @@ main::after {
 #weather {
 	display: flex;
 	justify-content: right;
-	color: palevioletred;
-	font-size: 2vmax;
-	font-weight: bold;
-	align-items: center;
+	color: rgb(192, 192, 192);
+	font-size: 2.5vmin;
+	max-height: 20px;
+	margin-right: 1vw;
+	font-weight: 500;
 }
 #weather img {
-	height: 2vmax;
+	height: 2.5vmin;
 }
 
 #clock {
-	font-size: 200px;
+	font-size: 20vmin;
 	color: ivory;
-	font-weight: bold;
+	font-weight: 500;
 }
 #backgroundImage {
 	width: 100%;
@@ -59,7 +62,7 @@ main::after {
 	border-top: hidden;
 	border-right: hidden;
 	border-left: hidden;
-	border-color: pink;
+	border-color: ivory;
 	background-color: rgba(255, 255, 255, 0);
 	width: 500px;
 	height: 100px;
@@ -86,7 +89,7 @@ main::after {
 	border-top: hidden;
 	border-right: hidden;
 	border-left: hidden;
-	border-color: pink;
+	border-color: ivory;
 	background-color: rgba(255, 255, 255, 0);
 	width: 500px;
 	height: 100px;

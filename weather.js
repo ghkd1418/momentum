@@ -23,27 +23,27 @@ function onGoOk(position) {
 
 			switch (weatherData) {
 				case "Clouds":
-					weatherImg.src = `img/cloud.png`;
+					weatherImg.src = `img/weather/cloud.gif`;
 					break;
 
 				case "Rain":
-					weatherImg.src = `img/rain.gif`;
+					weatherImg.src = `img/weather/rain.gif`;
 					break;
 
 				case "Snow":
-					weatherImg.src = `img/snow.gif`;
+					weatherImg.src = `img/weather/snow.gif`;
 					break;
 
 				case "Wind":
-					weatherImg.src = `img/wind.gif`;
+					weatherImg.src = `img/weather/wind.gif`;
 					break;
 
 				case "Clear":
-					weatherImg.src = `img/sun.gif`;
+					weatherImg.src = `img/weather/sun.gif`;
 					break;
 
-				case "Thunder":
-					weatherImg.src = `img/thunder.gif`;
+				case "Storm":
+					weatherImg.src = `img/weather/storm.gif`;
 					break;
 
 				default:
